@@ -23,9 +23,10 @@ function App() {
   return (
     <div className="App">
     <div className="holder-container">
+      
       <div className="header">
-        <h1>Marysia Ancerowicz</h1>
         <img id='herb'src={herb} alt='herb'></img>
+        <h1>Marysia Ancerowicz</h1>
       <div className='container'>
         {lorem}        
          

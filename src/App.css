@@ -1,26 +1,35 @@
 body {
   margin: 0 !important;
 }
+
 .App {
   height: 100vh;
 }
+
 .holder-container {
   min-height: 100%;
   position: relative;
   height: 100px;
 }
+
 .wave-foo {
   height: 100px; 
-  width:100%;
+  width: 100%;
   position: absolute;
   left: 0;
   bottom: 0;
 }
 
-.container{
+.container {
   display: flex;
   margin: 10%;
+  margin-top: 1% !important;
   text-align: justify;
+}
+
+.header {
+  position: relative;
+  z-index: 1;
 }
 
 .header h1 {
@@ -36,9 +45,25 @@ body {
 
 #herb {
   margin-top: auto;
-  display:flex;
+  display: flex;
   position: absolute;
-  right: 30px;
-  top: 0px;
-  width: 85px;
+  right: 4%; /* Adjust the right positioning as needed */
+  top: 2%; /* Adjust the top positioning as needed */
+  max-width: 8%; /* Set the maximum width as a percentage */
+  width: auto; /* Allow the image to scale while maintaining aspect ratio */
+}
+
+/* Media query for screens with a width of around 400px */
+@media screen and (max-width: 420px) {
+  .header h1 {
+    margin-top: 0;
+  }
+  #herb {
+    position: static;
+    right: auto;
+    top: auto;
+    max-width: 20%;
+    margin: 0 auto;
+    padding-top: 50px;
+  }
 }
