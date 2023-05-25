@@ -4,20 +4,13 @@ body {
 
 .App {
   height: 100vh;
+  position: relative;
 }
 
 .holder-container {
   min-height: 100%;
   position: relative;
   height: 100px;
-}
-
-.wave-foo {
-  height: 100px; 
-  width: 100%;
-  position: absolute;
-  left: 0;
-  bottom: 0;
 }
 
 .container {
@@ -47,10 +40,30 @@ body {
   margin-top: auto;
   display: flex;
   position: absolute;
-  right: 4%; /* Adjust the right positioning as needed */
-  top: 2%; /* Adjust the top positioning as needed */
-  max-width: 8%; /* Set the maximum width as a percentage */
-  width: auto; /* Allow the image to scale while maintaining aspect ratio */
+  right: 4%;
+  top: 2%;
+  max-width: 8%;
+  width: auto;
+}
+
+.scroll-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e8bdc3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.scroll-button span {
+  font-size: 24px;
+  color: #fff;
 }
 
 /* Media query for screens with a width of around 400px */
