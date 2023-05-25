@@ -31,11 +31,11 @@ function App({ lorem }) {
 
         <div className='container'>
           {/* placeholder */}
-          {lorem}        
-          {lorem}        
-          {lorem}        
-          {lorem}        
-          {lorem}        
+          {lorem} <br />     
+          {lorem} <br />
+          {lorem} <br />
+          {lorem} <br />        
+          {lorem} <br />
         </div>  
         </div>
         {/* wave at the bottom*/}
