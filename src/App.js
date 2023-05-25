@@ -1,24 +1,60 @@
-import logo from './logo.svg';
 import './App.css';
+import herb from './img/asdasd.png'
+import Wave from 'react-wavify'
 
-function App() {
+import { useState, useEffect } from 'react';
+
+
+function App({ lorem }) {
+  const [showScrollButton, setShowScrollButton] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const shouldShowScroll = window.scrollY > 0
+      setShowScrollButton(shouldShowScroll)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   return (
     <div className="App">
-      <h1>My Portfolio</h1>
+      <div className="holder-container">
+        
+        <div className="header">
+          <img id='herb'src={herb} alt='herb'></img>
+          <h1>Marysia Ancerowicz</h1>
 
-      <div class="project">
-        <h2>Project 1</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et mi consequat, vestibulum nunc vel, cursus justo.</p>
-      </div>
-
-      <div class="project">
-        <h2>Project 2</h2>
-        <p>Donec ac urna condimentum, hendrerit enim vitae, faucibus risus. Sed tempus libero a neque placerat dignissim.</p>
-      </div>
-
-      <div class="project">
-        <h2>Project 3</h2>
-        <p>Integer eleifend dolor sit amet ex tristique, in lobortis ipsum pulvinar. Vestibulum auctor leo a tellus convallis malesuada.</p>
+        <div className='container'>
+          {/* placeholder */}
+          {lorem} <br />     
+          {lorem} <br />
+          {lorem} <br />
+          {lorem} <br />        
+          {lorem} <br />
+        </div>  
+        </div>
+        {/* wave at the bottom*/}
+          <Wave fill='#e8bdc3'
+            paused={false}
+            options={{
+              height: 0,
+              amplitude: 20,
+              speed: 0.15,
+              points: 3
+            }}
+          />
+          {/* scroll arrow */}
+            {showScrollButton && (
+            <div className="scroll-button" onClick={scrollToTop}>
+              <span>&#8593;</span>
+            </div>
+            )}
+          {/* scroll arrow end */}
       </div>
     </div>
   );

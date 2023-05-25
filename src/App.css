@@ -1,38 +1,85 @@
-.App {
-  text-align: center;
-}
-
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
-  line-height: 1.6;
-  padding: 20px;
+  margin: 0 !important;
 }
 
-.project h1 {
-  font-size: 32px;
+.App {
+  height: 100vh;
+  position: relative;
+}
+
+.holder-container {
+  min-height: 100%;
+  position: relative;
+  height: 100px;
+}
+
+.container {
+  display: flex;
+  margin: 10%;
+  margin-top: 1% !important;
+  text-align: justify;
+}
+.container > :not(:last-child) {
   margin-bottom: 20px;
 }
 
-p {
-  margin-bottom: 10px;
+.header {
+  position: relative;
+  z-index: 1;
 }
 
-.project {
-  margin-bottom: 40px;
+.header h1 {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(50px + 2vmin);
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 
-.project h2 {
+#herb {
+  margin-top: auto;
+  display: flex;
+  position: absolute;
+  right: 4%;
+  top: 2%;
+  max-width: 8%;
+  width: auto;
+}
+
+.scroll-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #dcbbb3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.scroll-button span {
   font-size: 24px;
-  margin-bottom: 10px;
+  color: #fff;
 }
 
-.project p {
-  margin-bottom: 20px;
-}
-
-.project img {
-  max-width: 100%;
-  height: auto;
+/* Media query for screens with a width of around 400px */
+@media screen and (max-width: 420px) {
+  .header h1 {
+    margin-top: 0;
+  }
+  #herb {
+    position: static;
+    right: auto;
+    top: auto;
+    max-width: 20%;
+    margin: 0 auto;
+    padding-top: 50px;
+  }
 }
