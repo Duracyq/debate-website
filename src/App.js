@@ -12,7 +12,11 @@ function App({ lorem }) {
         <img id='herb'src={herb} alt='herb'></img>
         <h1>Marysia Ancerowicz</h1>
       <div className='container'>
-        {lorem}        
+      {lorem}        
+      {lorem}        
+      {lorem}        
+      {lorem}        
+      {lorem}        
          
       </div>  
       </div>
