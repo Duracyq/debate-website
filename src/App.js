@@ -1,5 +1,5 @@
 import './css/App.css';
-import Postulaty from './Postulaty';
+import { Postulaty, AboutMe } from './components';
 import React, { useState, useEffect, useRef } from 'react';
 import Wave from 'react-wavify';
 import herb from './img/asdasd.png';

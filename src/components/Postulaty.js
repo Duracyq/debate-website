@@ -2,7 +2,7 @@ import React from 'react';
 import './css/Postulaty.css';
 
 
-const Postulaty = ({ showMenuButton, clicked, lorem, showScrollButton, scrollToTop }) => {
+const Postulaty = ({ showMenuButton, clicked, lorem }) => {
   return (
     <div className="App">
         <div className="holder-container">            
