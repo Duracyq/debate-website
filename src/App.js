@@ -1,5 +1,6 @@
 import './css/App.css';
-import { Postulaty, AboutMe } from './components';
+import AboutMe from './AboutMe'
+import Postulaty from './Postulaty';
 import React, { useState, useEffect, useRef } from 'react';
 import Wave from 'react-wavify';
 import herb from './img/asdasd.png';
@@ -49,6 +50,11 @@ function App({ lorem }) {
                   <img id="herb" src={herb} alt="herb" />
                   <h1>Marysia Ancerowicz</h1>
               </div>
+
+        {/* <AboutMe
+          lorem={lorem}
+        />
+         */}
         <Postulaty
           showMenuButton={showMenuButton}
           clicked={clicked}

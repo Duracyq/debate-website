@@ -6,3 +6,5 @@ function AboutMe({ lorem }) {
         {lorem}
     )
 }
+
+export default AboutMe
