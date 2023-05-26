@@ -2,6 +2,8 @@ import './App.css';
 import Postulaty from './Postulaty';
 import React, { useState, useEffect } from 'react';
 import Wave from 'react-wavify';
+import herb from './img/asdasd.png';
+
 
 
 function App({ lorem }) {
@@ -37,36 +39,41 @@ function App({ lorem }) {
   // frontend
   return (
     <div className="App">
-      <Postulaty
-        showMenuButton={showMenuButton}
-        clicked={clicked}
-        lorem={lorem}
-        showScrollButton={showScrollButton}
-        scrollToTop={scrollToTop}
-      />
-
-      {/* wave at the bottom*/}
-      <div className="wave">
-      <Wave
-          fill="#e8bdc3"
-          paused={false}
-          options={{
-            height: 0,
-            amplitude: 20,
-            speed: 0.15,
-            points: 3,
-          }}
+      <div className="holder-container">
+        <div className="header">
+                  <img id="herb" src={herb} alt="herb" />
+                  <h1>Marysia Ancerowicz</h1>
+              </div>
+        <Postulaty
+          showMenuButton={showMenuButton}
+          clicked={clicked}
+          lorem={lorem}
+          showScrollButton={showScrollButton}
+          scrollToTop={scrollToTop}
         />
-      </div>
-  
-        {/* scroll arrow */}
-        {showScrollButton && (
-          <div className="scroll-button" onClick={scrollToTop}>
-            <span className="material-icons">&#xe5d8;</span>
-          </div>
-        )}
-        {/* scroll arrow */}
 
+        {/* wave at the bottom*/}
+        <div className="wave">
+        <Wave
+            fill="#e8bdc3"
+            paused={false}
+            options={{
+              height: 0,
+              amplitude: 20,
+              speed: 0.15,
+              points: 3,
+            }}
+          />
+        </div>
+    
+          {/* scroll arrow */}
+          {showScrollButton && (
+            <div className="scroll-button" onClick={scrollToTop}>
+              <span className="material-icons">&#xe5d8;</span>
+            </div>
+          )}
+          {/* scroll arrow */}
+      </div>
     </div>
   );
   

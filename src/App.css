@@ -2,10 +2,10 @@ body {
   margin: 0 !important;
 }
 
-.wave {
+/* .wave {
   position: fixed;
   bottom: 0;
-}
+} */
 
 .App {
   height: 150vh;
