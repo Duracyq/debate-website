@@ -87,12 +87,12 @@ useEffect(() => {
   return (
     <div className="App">
       <div className="app-wrapper" ref={appRef}>
-          {showMenuButton
+          {/* {showMenuButton
             && 
             <div className='menuButton'>
                 <span className="material-icons" onClick={clicked}>menu</span>
             </div>
-            }
+            } */}
         <div className="header">
           <img id="herb" src={herb} alt="herb" />
           <h1>Marysia Ancerowicz</h1>
