@@ -138,6 +138,7 @@ body {
   .statement {
     text-align: justify;
     margin: 5px 5px 10px 5px;
+    margin-bottom:20px;
     padding: 20px;
     border-radius: 15px;
     background-color: #dcbbb3;
@@ -151,11 +152,12 @@ body {
     top: auto;
     max-width: 20%;
     margin: 0 auto;
-    padding-top: 50px;
+    /* padding-top: 50px; */
   }
 
   .container {
     margin: 0 !important;
+    padding-bottom: 630px;
   }
   .background-container {
     flex-direction: column;

@@ -23,7 +23,7 @@
 
     #photo {
         position: fixed !important;
-        width: 60vw; /* Scale the width to 90% of the viewport width */
+        width: 53vw; /* Scale the width to 90% of the viewport width */
         top:200px;
         transform: translateX(-20%);
         z-index: -1; /* Center the photo horizontally */

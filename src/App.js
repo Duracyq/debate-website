@@ -81,6 +81,7 @@ function App({ lorem }) {
   return (
     <div className="App">
       <div className="app-wrapper" ref={appRef}>
+        {/* version 1 */}
         <div className="header">
           <img id="herb" src={herb} alt="herb" />
           <h1>Marysia Ancerowicz</h1>

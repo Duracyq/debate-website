@@ -94,7 +94,9 @@ const Postulaty = ({ lorem }) => {
               }}
           >
             <button className="prev-btn" onClick={handlePrev}>
-              Prev
+                <span class="material-symbols-outlined">
+                    arrow_back_ios_new
+                </span>
             </button>
             {lorem.map((item, index) => (
               <div
@@ -107,7 +109,9 @@ const Postulaty = ({ lorem }) => {
               </div>
             ))}
             <button className="next-btn" onClick={handleNext}>
-              Next
+                <span class="material-symbols-outlined">
+                    arrow_forward_ios
+                </span>
             </button>
           </div>
           {/* placeholder */}
