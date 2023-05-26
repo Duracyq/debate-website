@@ -4,6 +4,7 @@ import './css/index.css';
 import App from './App';
 import lorem from './data/lorem2.json';
 import loremMap from './data/lorem.json'
+import testTxt from './data/test.json';
 
 const container = document.getElementById('root')
 const root = createRoot(container)
@@ -13,6 +14,7 @@ root.render(
     <App 
       lorem={lorem.lorem}
       loremMap={loremMap.loremMap}
+      testTxt={testTxt.testTxt}
     />
   </React.StrictMode>,
 );
