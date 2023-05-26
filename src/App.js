@@ -6,10 +6,19 @@ import Wave from 'react-wavify';
 import herb from './img/asdasd.png';
 import { scrollToTop, updateAppHeight } from './scripts/helpers';
 
-function App({ lorem, loremMap }) {
+function App({ lorem }) {
   const [showScrollButton, setShowScrollButton] = useState(false);
   const [showMenuButton, setShowMenuButton] = useState(false);
   const appRef = useRef(null);
+
+  const [loremMap] = useState([
+    { id: '1', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+    { id: '2', text: 'Praesent tincidunt erat a lorem bibendum varius.' },
+    { id: '3', text: 'Donec gravida metus at mi consequat, eget aliquam orci aliquam.' },
+    { id: '4', text: 'Fusce consectetur neque vel urna aliquet eleifend.' },
+    { id: '5', text: 'Vestibulum ullamcorper urna id ex elementum, nec euismod dui fringilla.' },
+  ]);
+
 
   // app height
   useEffect(() => {
@@ -44,6 +53,12 @@ function App({ lorem, loremMap }) {
   return (
     <div className="App">
       <div className="app-wrapper" ref={appRef}>
+          {showMenuButton
+            && 
+            <div className='menuButton'>
+                <span className="material-icons" onClick={clicked}>menu</span>
+            </div>
+            }
         <div className="header">
           <img id="herb" src={herb} alt="herb" />
           <h1>Marysia Ancerowicz</h1>
@@ -53,7 +68,8 @@ function App({ lorem, loremMap }) {
 
         <div className="content-wrapper">
 
-          <Postulaty showMenuButton={showMenuButton} clicked={clicked} lorem={loremMap} />
+        <Postulaty lorem={loremMap} />
+
 
           <div className="wave-container">
             <Wave

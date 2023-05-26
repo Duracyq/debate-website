@@ -1,7 +1,7 @@
 import React from 'react';
 import './css/AboutMe.css';
 import './css/App.css';
-import marysia from './img/marysia.jpg'
+import marysia from './img/marsyia2.jpg'
 
 function AboutMe({ lorem }) {
     return (

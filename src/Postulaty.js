@@ -1,37 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './css/Postulaty.css';
 
 
-const Postulaty = ({ showMenuButton, clicked, lorem }) => {
+const Postulaty = ({ lorem }) => {
+    const [showLoremID, setShowLoremID] = useState([])
+
+    const setID = (id) => {
+        setShowLoremID(id)
+    }
+    
+
+
   return (
     <div className="App">
         <div className="holder-container">            
             {/* nav-pannel */}
-            {showMenuButton
-            && 
-            <div className='menuButton'>
-                <span className="material-icons" onClick={clicked}>menu</span>
-            </div>
-            }
-            {/* about me */}
-
-            {/* about me */}
             <div className="nav">
             <ul>
                 <li>
-                <span>Lorem</span>
+                    <span onClick={() => setID('1')}>Lorem</span>
                 </li>
                 <li>
-                <span>ipsum</span>
+                    <span onClick={() => setID('2')}>ipsum</span>
                 </li>
                 <li>
-                <span>dolor</span>
+                    <span onClick={() => setID('3')}>dolor</span>
                 </li>
                 <li>
-                <span>sit</span>
+                    <span onClick={() => setID('4')}>sit</span>
                 </li>
                 <li>
-                <span>amed</span>
+                    <span onClick={() => setID('5')}>amed</span>
                 </li>
             </ul>
             </div>
@@ -40,11 +39,11 @@ const Postulaty = ({ showMenuButton, clicked, lorem }) => {
 
             <div className="container">
             {/* placeholder */}
-                <div className='statement'> {lorem} <br /> </div>
-                <div className='statement'> {lorem} <br /> </div>
-                <div className='statement'> {lorem} <br /> </div>
-                <div className='statement'> {lorem} <br /> </div>
-                <div className='statement'> {lorem} <br /> </div>
+                {lorem.map((item) => (
+                    <div className="statement" key={item.id}>
+                    {item.text}
+                    </div>
+                ))}
             {/* placeholder */}
             </div>
         </div>
