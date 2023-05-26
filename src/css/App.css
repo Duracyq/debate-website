@@ -3,14 +3,48 @@ body {
 }
 
 .App {
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   position: relative;
 }
 
 .holder-container {
-  min-height: 100%;
+  flex-grow: 1;
   position: relative;
-  height: 100px;
+}
+
+.wave-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+
+.nav {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.nav ul li {
+  padding: 10px;
+  margin: 10px;
+  background-color: #dcbbb3;
+  border-radius: 10px;
+}
+
+.nav ul li:hover {
+  background-color: #99827c;
+  cursor: pointer;
 }
 
 .container {
@@ -75,6 +109,14 @@ body {
   color: #fff;
 }
 
+.menuButton {
+  position: fixed;
+  top: 50px;
+  left: 15px;
+  width: 100%;
+  justify-content: center;
+}
+
 /* Media query for screens with a width of around 400px */
 @media screen and (max-width: 420px) {
   .header h1 {
@@ -87,5 +129,19 @@ body {
     max-width: 20%;
     margin: 0 auto;
     padding-top: 50px;
+  }
+
+  .container {
+    margin: 0;
+  }
+
+  .nav ul li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin: 5px;
+  }
+  .nav ul li .material-icons {
+    margin-right: 5px;
   }
 }

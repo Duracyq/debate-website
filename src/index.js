@@ -1,12 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
+import { createRoot } from 'react-dom/client';
+import './css/index.css';
 import App from './App';
-import lorem from './lorem.json';
+import lorem from './data/lorem2.json';
+import loremMap from './data/lorem.json'
 
-ReactDOM.render(
+const container = document.getElementById('root')
+const root = createRoot(container)
+
+root.render(
   <React.StrictMode>
-    <App lorem={lorem.lorem} />
+    <App 
+      lorem={lorem.lorem}
+      loremMap={loremMap.loremMap}
+    />
   </React.StrictMode>,
-  document.getElementById('root')
 );
