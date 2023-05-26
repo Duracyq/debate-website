@@ -33,6 +33,8 @@ function App({ lorem }) {
   }
   // scroll arrow end
 
+  const clicked = () => console.log('clicked')
+
   // frontend
   return (
     <div className="App">
@@ -46,9 +48,12 @@ function App({ lorem }) {
         {showMenuButton
           && 
           <div className='menuButton'>
-            <span className="material-icons">menu</span>
+            <span className="material-icons" onClick={clicked}>menu</span>
           </div>
         }
+          {/* about me */}
+
+          {/* about me */}
         <div className="nav">
           <ul>
             <li>
@@ -73,13 +78,13 @@ function App({ lorem }) {
 
         <div className="container">
           {/* placeholder */}
-          <div className='statement'> {lorem} <br /> </div>
-          <div className='statement'> {lorem} <br /> </div>
-          <div className='statement'> {lorem} <br /> </div>
-          <div className='statement'> {lorem} <br /> </div>
-          <div className='statement'> {lorem} <br /> </div>
+            <div className='statement'> {lorem} <br /> </div>
+            <div className='statement'> {lorem} <br /> </div>
+            <div className='statement'> {lorem} <br /> </div>
+            <div className='statement'> {lorem} <br /> </div>
+            <div className='statement'> {lorem} <br /> </div>
+          {/* placeholder */}
         </div>
-  
         {/* wave at the bottom*/}
         <Wave
           fill="#e8bdc3"

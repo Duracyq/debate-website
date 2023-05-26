@@ -100,6 +100,9 @@ body {
 }
 
 .menuButton {
+  position: fixed;
+  top: 50px;
+  left: 15px;
   width: 100%;
   justify-content: center;
 }
@@ -117,10 +120,16 @@ body {
     margin: 0 auto;
     padding-top: 50px;
   }
+
+  .container {
+    margin: 0;
+  }
+
   .nav ul li {
     display: flex;
     align-items: center;
     padding: 10px;
+    margin: 5px;
   }
   .nav ul li .material-icons {
     margin-right: 5px;
