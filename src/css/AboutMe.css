@@ -17,6 +17,8 @@
 @media screen and (max-width: 480px) {
     .container_aboutme {
         flex-direction: column;
+        margin: 10px;
+
     }
 
     #photo {

@@ -104,12 +104,13 @@ function App({ lorem }) {
 
         <Postulaty lorem={loremMap} />
 
-        <div className='vote'>
-          <h2>Zagłosuj na mnie!</h2>
-        </div>
 
         {waveVisible && (
           <div className={`wave-container ${isScrollDone ? 'slide-up' : ''}`}>
+            <div className='vote'>
+              <h2>Zagłosuj na mnie!</h2>
+              <g>Marysia Ancerowicz</g>
+            </div>
             <div className="wave-animation">
               <Wave
                 fill="#e8bdc3"
