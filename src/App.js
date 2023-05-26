@@ -7,10 +7,6 @@ import herb from './img/asdasd.png';
 import { scrollToTop, updateAppHeight } from './scripts/helpers';
 
 function App({ lorem }) {
-  const [showScrollButton, setShowScrollButton] = useState(false);
-  const [showMenuButton, setShowMenuButton] = useState(false);
-  const appRef = useRef(null);
-
   const [loremMap] = useState([
     { id: '1', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
     { id: '2', text: 'Praesent tincidunt erat a lorem bibendum varius.' },
@@ -18,6 +14,44 @@ function App({ lorem }) {
     { id: '4', text: 'Fusce consectetur neque vel urna aliquet eleifend.' },
     { id: '5', text: 'Vestibulum ullamcorper urna id ex elementum, nec euismod dui fringilla.' },
   ]);
+
+  const [showScrollButton, setShowScrollButton] = useState(false);
+  const [showMenuButton, setShowMenuButton] = useState(false);
+  const appRef = useRef(null);
+// useState for scroll position and animation
+const [isScrollDone, setIsScrollDone] = useState(false);
+const [waveVisible, setWaveVisible] = useState(false);
+const [prevScrollPos, setPrevScrollPos] = useState(0);
+
+// useEffect for scroll position
+useEffect(() => {
+  const handleScrollPosition = () => {
+    const scrollPosition = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const fullHeight = document.documentElement.scrollHeight;
+    const scrollPercentage = (scrollPosition / (fullHeight - windowHeight)) * 100;
+
+    if (scrollPercentage >= 95) {
+      setIsScrollDone(true);
+    } else {
+      setIsScrollDone(false);
+    }
+
+    setPrevScrollPos(scrollPosition);
+  };
+
+  window.addEventListener('scroll', handleScrollPosition);
+  return () => window.removeEventListener('scroll', handleScrollPosition);
+}, [prevScrollPos]);
+
+// useEffect for wave visibility
+useEffect(() => {
+  if (isScrollDone) {
+    setWaveVisible(true);
+  } else {
+    setWaveVisible(false);
+  }
+}, [isScrollDone]);
 
 
   // app height
@@ -70,19 +104,22 @@ function App({ lorem }) {
 
         <Postulaty lorem={loremMap} />
 
-
-          <div className="wave-container">
-            <Wave
-              fill="#e8bdc3"
-              paused={false}
-              options={{
-                height: 20,
-                amplitude: 20,
-                speed: 0.15,
-                points: 3,
-              }}
-            />
+        {waveVisible && (
+          <div className={`wave-container ${isScrollDone ? 'slide-up' : ''}`}>
+            <div className="wave-animation">
+              <Wave
+                fill="#e8bdc3"
+                paused={false}
+                options={{
+                  height: 20,
+                  amplitude: 20,
+                  speed: 0.15,
+                  points: 3,
+                }}
+              />
+            </div>
           </div>
+        )}
 
           {showScrollButton && (
             <div className="scroll-button" onClick={scrollToTop}>

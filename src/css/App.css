@@ -15,11 +15,13 @@ body {
 }
 
 .wave-container {
+  transition: transform 0.5s ease-in-out;
+
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  z-index: -1;
+  z-index: 1;
 }
 
 
@@ -116,6 +118,32 @@ body {
   width: 100%;
   justify-content: center;
 }
+.wave-animation {
+  position: absolute;
+  bottom: -20px; /* Adjust this value based on the desired initial position */
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  animation: wave-appear 0.5s ease-in-out forwards;
+}
+.wave-container.visible {
+  display: block;
+}
+
+.slide-up {
+  transform: translateY(-100%);
+}
+
+@keyframes wave-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 /* Media query for screens with a width of around 400px */
 @media screen and (max-width: 420px) {
@@ -166,11 +194,11 @@ body {
     max-width: 8%;
     width: auto;
     background-color: inherit; /* Inherit the background color from the parent (.header) */
-    position: static;
+    /* position: static;
     right: auto;
     top: auto;
     max-width: 20%;
-    margin: 0 auto;
+    margin: 0 auto; */
     padding-top: 50px;
   }
 
