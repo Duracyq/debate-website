@@ -32,6 +32,19 @@ function App({ lorem }) {
           <h1>Marysia Ancerowicz</h1>
         </div>
         
+        {/* nav-pannel */}
+        <div className="nav">
+          <ul>
+            <li>Lorem</li>
+            <li>ipsum</li>
+            <li>dolor</li>
+            <li>sit</li>
+            <li>amed</li>
+          </ul>
+        </div>
+        {/* nav-pannel */}
+
+
         <div className="container">
           {/* placeholder */}
           <div className='statement'> {lorem} <br /> </div>
