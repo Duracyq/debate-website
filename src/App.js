@@ -1,6 +1,5 @@
 import './App.css';
 import herb from './img/asdasd.png'
-import QR_CODE from './img/Debate-website.png'
 import Wave from 'react-wavify'
 
 import { useState, useEffect } from 'react';
@@ -32,14 +31,14 @@ function App({ lorem }) {
           <img id="herb" src={herb} alt="herb" />
           <h1>Marysia Ancerowicz</h1>
         </div>
-  
+        
         <div className="container">
           {/* placeholder */}
-          {lorem} <br />
-          {lorem} <br />
-          {lorem} <br />
-          {lorem} <br />
-          {lorem} <br />
+          <div className='statement'> {lorem} <br /> </div>
+          <div className='statement'> {lorem} <br /> </div>
+          <div className='statement'> {lorem} <br /> </div>
+          <div className='statement'> {lorem} <br /> </div>
+          <div className='statement'> {lorem} <br /> </div>
         </div>
   
         {/* wave at the bottom*/}
