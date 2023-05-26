@@ -1,0 +1,14 @@
+.container_aboutme {
+    display: flex;
+    flex-direction: row;
+}
+#aboutme .statement {
+    width: auto !important;
+    height: auto !important;
+}
+#photo {
+    margin-left: 20px;
+    height: 300px;
+    border-radius: 20px;
+}
+  
