@@ -1,57 +1,52 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './css/Postulaty.css';
 
-
 const Postulaty = ({ lorem }) => {
-    const [showLoremID, setShowLoremID] = useState([])
+  const [selectedID, setSelectedID] = useState(null);
 
-    const setID = async (id) => {
-        setShowLoremID(id)
-        console.log(id)
-    }
-    
-
+  const setID = (id) => {
+    setSelectedID(id);
+  };
 
   return (
     <div className="App">
-        <div className="holder-container">            
-            {/* nav-pannel */}
-            <div className="nav">
-            <ul>
-                <li>
-                    <span onClick={() => setID('1')}>Lorem</span>
-                </li>
-                <li>
-                    <span onClick={() => setID('2')}>ipsum</span>
-                </li>
-                <li>
-                    <span onClick={() => setID('3')}>dolor</span>
-                </li>
-                <li>
-                    <span onClick={() => setID('4')}>sit</span>
-                </li>
-                <li>
-                    <span onClick={() => setID('5')}>amed</span>
-                </li>
-            </ul>
-            </div>
-            {/* nav-pannel */}
-
-
-            <div className="container">
-            {/* placeholder */}
-            <div className='background-container'>
-                {lorem.map((item) => (
-                        <div className="statement" key={item.id}>
-                        {item.text}
-                        </div>
-                ))}
-            </div>
-            {/* placeholder */}
-            </div>
+      <div className="holder-container">
+        {/* nav-pannel */}
+        <div className="nav">
+          <ul>
+            <li>
+              <span onClick={() => setID('1')}>Lorem</span>
+            </li>
+            <li>
+              <span onClick={() => setID('2')}>ipsum</span>
+            </li>
+            <li>
+              <span onClick={() => setID('3')}>dolor</span>
+            </li>
+            <li>
+              <span onClick={() => setID('4')}>sit</span>
+            </li>
+            <li>
+              <span onClick={() => setID('5')}>amed</span>
+            </li>
+          </ul>
         </div>
+        {/* nav-pannel */}
+
+        <div className="container">
+          {/* placeholder */}
+          <div className="background-container">
+            {lorem.map((item) => (
+              <div className="statement" key={item.id}>
+                {selectedID === item.id && item.text}
+              </div>
+            ))}
+          </div>
+          {/* placeholder */}
+        </div>
+      </div>
     </div>
   );
 };
 
-export default Postulaty
+export default Postulaty;

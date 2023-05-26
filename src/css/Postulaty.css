@@ -1,120 +1,132 @@
 body {
-    margin: 0 !important;
+  margin: 0 !important;
+}
+
+.App {
+  height: 150vh;
+  position: relative;
+}
+
+.holder-container {
+  background-color: white !important;
+  min-height: 100%;
+  position: relative;
+  height: 100px;
+}
+
+.nav {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.nav ul li {
+  padding: 10px;
+  margin: 10px;
+  background-color: #dcbbb3;
+  border-radius: 10px;
+}
+
+.nav ul li:hover {
+  background-color: #99827c;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 10%;
+  margin-top: 1% !important;
+}
+
+.statement {
+  text-align: justify;
+  margin: 20px 20px 40px 20px;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #dcbbb3;
+}
+
+.statement.inactive {
+  background-color: null;
+}
+
+.header {
+  position: relative;
+  z-index: 1;
+}
+
+.header h1 {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(50px + 2vmin);
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+#herb {
+  margin-top: auto;
+  display: flex;
+  position: absolute;
+  right: 4%;
+  top: 2%;
+  max-width: 8%;
+  width: auto;
+}
+
+.menuButton {
+  position: fixed;
+  top: 50px;
+  left: 15px;
+  width: 100%;
+  justify-content: center;
+}
+
+.statement.hidden {
+  display: none;
+  /* or */
+  background-color: transparent;
+}
+
+
+
+/* Media query for screens with a width of around 400px */
+@media screen and (max-width: 420px) {
+  .header h1 {
+    margin-top: 0;
+  }
+  #herb {
+    position: static;
+    right: auto;
+    top: auto;
+    max-width: 20%;
+    margin: 0 auto;
+    padding-top: 50px;
   }
 
-  .App {
-    height: 150vh;
-    position: relative;
-  }
-  
-  .holder-container {
-    background-color: white !important;
-    min-height: 100%;
-    position: relative;
-    height: 100px;
-  }
-  
-  .nav {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-  }
-  
-  .nav ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-  }
-  
-  .nav ul li {
-    padding: 10px;
-    margin: 10px;
-    background-color: #dcbbb3;
-    border-radius: 10px;
-  }
-  
-  .nav ul li:hover {
-    background-color: #99827c;
-    cursor: pointer;
-  }
-  
   .container {
+    margin: 0;
+  }
+  .background-container {
+    background-color: white;
+  }
+
+  .nav ul li {
     display: flex;
-    flex-direction: column;
-    margin: 10%;
-    margin-top: 1% !important;
-  }
-  
-  .statement {
-    text-align: justify;
-    margin: 20px 20px 40px 20px;
-    padding: 20px;
-    border-radius: 15px;
-    background-color: #dcbbb3;
-  }
-  
-  .header {
-    position: relative;
-    z-index: 1;
-  }
-  
-  .header h1 {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    font-size: calc(50px + 2vmin);
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding: 10px;
+    margin: 5px;
   }
-  
-  #herb {
-    margin-top: auto;
-    display: flex;
-    position: absolute;
-    right: 4%;
-    top: 2%;
-    max-width: 8%;
-    width: auto;
+  .nav ul li .material-icons {
+    margin-right: 5px;
   }
-  
-  .menuButton {
-    position: fixed;
-    top: 50px;
-    left: 15px;
-    width: 100%;
-    justify-content: center;
-  }
-  
-  /* Media query for screens with a width of around 400px */
-  @media screen and (max-width: 420px) {
-    .header h1 {
-      margin-top: 0;
-    }
-    #herb {
-      position: static;
-      right: auto;
-      top: auto;
-      max-width: 20%;
-      margin: 0 auto;
-      padding-top: 50px;
-    }
-  
-    .container {
-      margin: 0;
-    }
-    .background-container {
-      background-color: white;
-    }
-  
-    .nav ul li {
-      display: flex;
-      align-items: center;
-      padding: 10px;
-      margin: 5px;
-    }
-    .nav ul li .material-icons {
-      margin-right: 5px;
-    }
-  }
+}
