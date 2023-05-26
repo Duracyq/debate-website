@@ -1,15 +1,22 @@
 import './App.css';
 import Postulaty from './Postulaty';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Wave from 'react-wavify';
 import herb from './img/asdasd.png';
-
+import { scrollToTop, updateAppHeight } from './scripts/helpers';
 
 
 function App({ lorem }) {
   // scroll arrow button
   const [showScrollButton, setShowScrollButton] = useState(false)
   const [showMenuButton, setShowMenuButton] = useState(false)
+  const appRef = useRef(null)
+
+  useEffect(() => {
+    updateAppHeight(appRef)
+    window.addEventListener('resize', () => updateAppHeight(appRef))
+    return () => window.removeEventListener('resize', () => updateAppHeight(appRef))
+  })
 
   useEffect(() => {
     const handleMenu = () => {
@@ -29,16 +36,13 @@ function App({ lorem }) {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
   // scroll arrow end
 
   const clicked = () => console.log('clicked')
 
   // frontend
   return (
-    <div className="App">
+    <div className="App" ref={appRef}>
       <div className="holder-container">
         <div className="header">
                   <img id="herb" src={herb} alt="herb" />
