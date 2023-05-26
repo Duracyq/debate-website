@@ -10,13 +10,13 @@ body {
 }
 
 .holder-container {
+  margin-bottom: 100px;
   flex-grow: 1;
   position: relative;
 }
 
 .wave-container {
   transition: transform 0.5s ease-in-out;
-
   position: fixed;
   bottom: 0;
   left: 0;

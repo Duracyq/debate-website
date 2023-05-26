@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './css/Postulaty.css';
 
 const Postulaty = ({ lorem }) => {
-  const [selectedID, setSelectedID] = useState(lorem[0].id);
+  const [selectedID, setSelectedID] = useState(null);
 
   const setID = (id) => {
     setSelectedID(id);
@@ -14,36 +14,15 @@ const Postulaty = ({ lorem }) => {
         {/* nav-pannel */}
         <div className="nav">
           <ul>
-            <li
-              className={`nav-item ${selectedID === '1' ? 'active' : ''}`}
-              onClick={() => setID('1')}
-            >
-              Lorem
-            </li>
-            <li
-              className={`nav-item ${selectedID === '2' ? 'active' : ''}`}
-              onClick={() => setID('2')}
-            >
-              ipsum
-            </li>
-            <li
-              className={`nav-item ${selectedID === '3' ? 'active' : ''}`}
-              onClick={() => setID('3')}
-            >
-              dolor
-            </li>
-            <li
-              className={`nav-item ${selectedID === '4' ? 'active' : ''}`}
-              onClick={() => setID('4')}
-            >
-              sit
-            </li>
-            <li
-              className={`nav-item ${selectedID === '5' ? 'active' : ''}`}
-              onClick={() => setID('5')}
-            >
-              amed
-            </li>
+            {lorem.map((item) => (
+              <li
+                key={item.id}
+                className={`nav-item ${selectedID === item.id ? 'active' : ''}`}
+                onClick={() => setID(item.id)}
+              >
+                {item.title}
+              </li>
+            ))}
           </ul>
         </div>
         {/* nav-pannel */}

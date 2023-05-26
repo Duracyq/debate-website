@@ -10,7 +10,8 @@ body {
   background-color: white !important;
   min-height: 100%;
   position: relative;
-  height: 100px;
+  height: 200px;
+  position-bottom: 10px;
 }
 
 .nav {
@@ -25,11 +26,7 @@ body {
   padding: 0;
 }
 
-.nav ul li:hover {
-  background-color: #99827c;
-  cursor: pointer;
-}
-.nav ul li {
+.nav-item {
   display: flex;
   align-items: center;
   padding: 10px;
@@ -39,7 +36,11 @@ body {
   cursor: pointer;
 }
 
-.nav ul li.active {
+.nav-item:hover {
+  background-color: #99827c;
+}
+
+.nav-item.active {
   background-color: #99827c;
 }
 
@@ -61,6 +62,7 @@ body {
   border-radius: 15px;
   background-color: #dcbbb3;
 }
+
 
 .statement.inactive {
   background-color: null;
