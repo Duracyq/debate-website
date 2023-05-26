@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './css/Postulaty.css';
 
 
 const Postulaty = ({ showMenuButton, clicked, lorem, showScrollButton, scrollToTop }) => {

@@ -1,4 +1,4 @@
-import './App.css';
+import './css/App.css';
 import Postulaty from './Postulaty';
 import React, { useState, useEffect, useRef } from 'react';
 import Wave from 'react-wavify';
