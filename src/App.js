@@ -8,6 +8,16 @@ import { useState, useEffect } from 'react';
 function App({ lorem }) {
   // scroll arrow button
   const [showScrollButton, setShowScrollButton] = useState(false)
+  const [showMenuButton, setShowMenuButton] = useState(false)
+
+  useEffect(() => {
+    const handleMenu = () => {
+      const shouldShowMenu = window.innerWidth <= 420
+      setShowMenuButton(shouldShowMenu)
+    }
+    window.addEventListener('resize', handleMenu)
+    return () => window.removeEventListener('resize', handleMenu)
+  })
   
   useEffect(() => {
     const handleScroll = () => {
@@ -33,13 +43,29 @@ function App({ lorem }) {
         </div>
         
         {/* nav-pannel */}
+        {showMenuButton
+          && 
+          <div className='menuButton'>
+            <span className="material-icons">menu</span>
+          </div>
+        }
         <div className="nav">
           <ul>
-            <li>Lorem</li>
-            <li>ipsum</li>
-            <li>dolor</li>
-            <li>sit</li>
-            <li>amed</li>
+            <li>
+              <span>Lorem</span>
+            </li>
+            <li>
+              <span>ipsum</span>
+            </li>
+            <li>
+              <span>dolor</span>
+            </li>
+            <li>
+              <span>sit</span>
+            </li>
+            <li>
+              <span>amed</span>
+            </li>
           </ul>
         </div>
         {/* nav-pannel */}
