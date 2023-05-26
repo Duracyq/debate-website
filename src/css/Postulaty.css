@@ -11,7 +11,6 @@ body {
   min-height: 100%;
   position: relative;
   height: 200px;
-  position-bottom: 10px;
 }
 
 .nav {
@@ -107,6 +106,30 @@ body {
   /* or */
   background-color: transparent;
 }
+.background-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.prev-btn,
+.next-btn {
+  background-color: #dcbbb3;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  background-color: #99827c;
+}
 
 
 
@@ -135,10 +158,14 @@ body {
     margin: 0 !important;
   }
   .background-container {
-    background-color: white;
-    /* margin: 10px; */
-    border-radius: 15px;
+    flex-direction: column;
   }
+
+  .prev-btn,
+  .next-btn {
+    display: none;
+  }
+}
 
   .nav ul li {
     display: flex;
@@ -153,4 +180,3 @@ body {
 
   
 
-}

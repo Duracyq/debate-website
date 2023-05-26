@@ -1,12 +1,62 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './css/Postulaty.css';
 
 const Postulaty = ({ lorem }) => {
   const [selectedID, setSelectedID] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const containerRef = useRef(null);
 
   const setID = (id) => {
     setSelectedID(id);
   };
+  
+  const handleSwipe = (e) => {
+    const container = containerRef.current;
+    const deltaX = e.deltaX;
+
+    if (deltaX > 0) {
+      // Swipe right, show previous item
+      const prevItem = container.previousElementSibling;
+      if (prevItem) {
+        setSelectedID(prevItem.dataset.id);
+      }
+    } else if (deltaX < 0) {
+      // Swipe left, show next item
+      const nextItem = container.nextElementSibling;
+      if (nextItem) {
+        setSelectedID(nextItem.dataset.id);
+      }
+    }
+  };
+
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveIndex((prevIndex) =>
+        prevIndex === lorem.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 25000);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, [lorem.length]);
+
+  const handlePrev = () => {
+    setActiveIndex((prevIndex) =>
+      prevIndex === 0 ? lorem.length - 1 : prevIndex - 1
+    );
+  };
+
+  const handleNext = () => {
+    setActiveIndex((prevIndex) =>
+      prevIndex === lorem.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  useEffect(() => {
+    setSelectedID(lorem[activeIndex].id);
+  }, [activeIndex, lorem]);
 
   return (
     <div className="App">
@@ -29,8 +79,24 @@ const Postulaty = ({ lorem }) => {
 
         <div className="container">
           {/* placeholder */}
-          <div className="background-container">
-            {lorem.map((item) => (
+          <div className="background-container" ref={containerRef} 
+              onTouchStart={(e) => {
+                const touch = e.touches[0];
+                containerRef.current.startX = touch.clientX;
+              }}
+              onTouchMove={(e) => {
+                const touch = e.touches[0];
+                const deltaX = touch.clientX - containerRef.current.startX;
+                containerRef.current.deltaX = deltaX;
+              }}
+              onTouchEnd={() => {
+                handleSwipe({ deltaX: containerRef.current.deltaX });
+              }}
+          >
+            <button className="prev-btn" onClick={handlePrev}>
+              Prev
+            </button>
+            {lorem.map((item, index) => (
               <div
                 className={`statement ${
                   selectedID === item.id ? '' : 'hidden'
@@ -40,6 +106,9 @@ const Postulaty = ({ lorem }) => {
                 {item.text}
               </div>
             ))}
+            <button className="next-btn" onClick={handleNext}>
+              Next
+            </button>
           </div>
           {/* placeholder */}
         </div>
