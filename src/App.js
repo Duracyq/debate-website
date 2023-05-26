@@ -24,24 +24,7 @@ function App({ lorem }) {
   }
   // scroll arrow end
 
-  // qr code visibility
-  const [showQR, setShowQr] = useState(false);
-
-  useEffect(() => {
-    const handleQr = () => {
-      setTimeout(() => {
-        const shouldShowQr = window.innerWidth > 768;
-        setShowQr(shouldShowQr);
-      }, 500);
-    };
-  
-    window.addEventListener('load', handleQr);
-    return () => window.removeEventListener('load', handleQr);
-  }, []); 
-  // qr code visibility end
-
-
-  // fronend
+  // frontend
   return (
     <div className="App">
       <div className="holder-container">
@@ -74,18 +57,11 @@ function App({ lorem }) {
         {/* scroll arrow */}
         {showScrollButton && (
           <div className="scroll-button" onClick={scrollToTop}>
-            <span>&#8593;</span>
+            <span className="material-icons">&#xe5d8;</span>
           </div>
         )}
-        {/* scroll arrow end */}
-  
-        {/* qr code */}
-        {showQR && (
-          <div className="qrcode">
-            <img src={QR_CODE} alt="QRCode" />
-          </div>
-        )}
-        {/* qr code end */}
+        {/* scroll arrow */}
+
       </div>
     </div>
   );
