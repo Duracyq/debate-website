@@ -8,6 +8,7 @@ body {
   }
   
   .holder-container {
+    background-color: white !important;
     min-height: 100%;
     position: relative;
     height: 100px;
@@ -102,6 +103,9 @@ body {
   
     .container {
       margin: 0;
+    }
+    .background-container {
+      background-color: white;
     }
   
     .nav ul li {

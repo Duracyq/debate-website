@@ -2,13 +2,28 @@
     display: flex;
     flex-direction: row;
 }
+
 #aboutme .statement {
     width: auto !important;
     height: auto !important;
 }
+
 #photo {
     margin-left: 20px;
     height: 300px;
     border-radius: 20px;
 }
-  
+
+@media screen and (max-width: 480px) {
+    .container_aboutme {
+        flex-direction: column;
+    }
+
+    #photo {
+        position: fixed !important;
+        width: 60vw; /* Scale the width to 90% of the viewport width */
+        top:200px;
+        transform: translateX(-20%);
+        z-index: -1; /* Center the photo horizontally */
+    }
+}

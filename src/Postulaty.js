@@ -5,8 +5,9 @@ import './css/Postulaty.css';
 const Postulaty = ({ lorem }) => {
     const [showLoremID, setShowLoremID] = useState([])
 
-    const setID = (id) => {
+    const setID = async (id) => {
         setShowLoremID(id)
+        console.log(id)
     }
     
 
@@ -39,11 +40,13 @@ const Postulaty = ({ lorem }) => {
 
             <div className="container">
             {/* placeholder */}
+            <div className='background-container'>
                 {lorem.map((item) => (
-                    <div className="statement" key={item.id}>
-                    {item.text}
-                    </div>
+                        <div className="statement" key={item.id}>
+                        {item.text}
+                        </div>
                 ))}
+            </div>
             {/* placeholder */}
             </div>
         </div>
