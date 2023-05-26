@@ -2,7 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import './css/index.css';
 import App from './App';
-import lorem from './lorem.json';
+import lorem from './data/lorem.json';
 
 const container = document.getElementById('root')
 const root = createRoot(container)

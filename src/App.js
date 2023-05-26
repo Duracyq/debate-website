@@ -7,17 +7,18 @@ import { scrollToTop, updateAppHeight } from './scripts/helpers';
 
 
 function App({ lorem }) {
-  // scroll arrow button
   const [showScrollButton, setShowScrollButton] = useState(false)
   const [showMenuButton, setShowMenuButton] = useState(false)
   const appRef = useRef(null)
 
+  // app hegiht
   useEffect(() => {
     updateAppHeight(appRef)
     window.addEventListener('resize', () => updateAppHeight(appRef))
     return () => window.removeEventListener('resize', () => updateAppHeight(appRef))
   })
 
+  // menu shower
   useEffect(() => {
     const handleMenu = () => {
       const shouldShowMenu = window.innerWidth <= 420
@@ -26,7 +27,8 @@ function App({ lorem }) {
     window.addEventListener('resize', handleMenu)
     return () => window.removeEventListener('resize', handleMenu)
   })
-  
+
+  // scroll arrow
   useEffect(() => {
     const handleScroll = () => {
       const shouldShowScroll = window.scrollY > 0
@@ -36,7 +38,6 @@ function App({ lorem }) {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // scroll arrow end
 
   const clicked = () => console.log('clicked')
 
