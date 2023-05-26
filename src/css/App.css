@@ -5,7 +5,7 @@ body {
 .App {
   display: flex;
   flex-direction: column;
-  min-height: 10vh;
+  min-height: 60vh;
   position: relative;
 }
 
@@ -145,9 +145,23 @@ body {
   }
 }
 
+.vote {
+  position: absolute;
+  bottom: 15vh;
+  right: 50px;
+  font-size: calc(20px + 2vmin);
+  z-index: 1;
+}
+
 /* Media query for screens with a width of around 400px */
 @media screen and (max-width: 420px) {
 
+  /* .App{
+    height: calc(20vh + 2vmin);
+  } */
+  .app-wrapper {
+    height: 20vh;
+  }
   .container {
     margin: 0;
   }
@@ -202,6 +216,13 @@ body {
     padding-top: 50px;
   }
 
+  .vote{
+    position: fixed;
+    margin-top: 60px;
+    bottom: 20vh;
+    right: 50px;
+    font-size: calc(20px + 2vmin);
+  }
   
 }
 

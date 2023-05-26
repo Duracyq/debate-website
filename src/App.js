@@ -104,6 +104,10 @@ function App({ lorem }) {
 
         <Postulaty lorem={loremMap} />
 
+        <div className='vote'>
+          <h2>Zagłosuj na mnie!</h2>
+        </div>
+
         {waveVisible && (
           <div className={`wave-container ${isScrollDone ? 'slide-up' : ''}`}>
             <div className="wave-animation">
@@ -120,6 +124,8 @@ function App({ lorem }) {
             </div>
           </div>
         )}
+
+
 
           {showScrollButton && (
             <div className="scroll-button" onClick={scrollToTop}>
