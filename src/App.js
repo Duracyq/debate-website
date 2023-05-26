@@ -1,8 +1,7 @@
 import './App.css';
-import herb from './img/asdasd.png'
-import Wave from 'react-wavify'
-
-import { useState, useEffect } from 'react';
+import Postulaty from './Postulaty';
+import React, { useState, useEffect } from 'react';
+import Wave from 'react-wavify';
 
 
 function App({ lorem }) {
@@ -38,55 +37,17 @@ function App({ lorem }) {
   // frontend
   return (
     <div className="App">
-      <div className="holder-container">
-        <div className="header">
-          <img id="herb" src={herb} alt="herb" />
-          <h1>Marysia Ancerowicz</h1>
-        </div>
-        
-        {/* nav-pannel */}
-        {showMenuButton
-          && 
-          <div className='menuButton'>
-            <span className="material-icons" onClick={clicked}>menu</span>
-          </div>
-        }
-          {/* about me */}
+      <Postulaty
+        showMenuButton={showMenuButton}
+        clicked={clicked}
+        lorem={lorem}
+        showScrollButton={showScrollButton}
+        scrollToTop={scrollToTop}
+      />
 
-          {/* about me */}
-        <div className="nav">
-          <ul>
-            <li>
-              <span>Lorem</span>
-            </li>
-            <li>
-              <span>ipsum</span>
-            </li>
-            <li>
-              <span>dolor</span>
-            </li>
-            <li>
-              <span>sit</span>
-            </li>
-            <li>
-              <span>amed</span>
-            </li>
-          </ul>
-        </div>
-        {/* nav-pannel */}
-
-
-        <div className="container">
-          {/* placeholder */}
-            <div className='statement'> {lorem} <br /> </div>
-            <div className='statement'> {lorem} <br /> </div>
-            <div className='statement'> {lorem} <br /> </div>
-            <div className='statement'> {lorem} <br /> </div>
-            <div className='statement'> {lorem} <br /> </div>
-          {/* placeholder */}
-        </div>
-        {/* wave at the bottom*/}
-        <Wave
+      {/* wave at the bottom*/}
+      <div className="wave">
+      <Wave
           fill="#e8bdc3"
           paused={false}
           options={{
@@ -96,6 +57,7 @@ function App({ lorem }) {
             points: 3,
           }}
         />
+      </div>
   
         {/* scroll arrow */}
         {showScrollButton && (
@@ -105,7 +67,6 @@ function App({ lorem }) {
         )}
         {/* scroll arrow */}
 
-      </div>
     </div>
   );
   

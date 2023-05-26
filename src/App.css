@@ -2,8 +2,13 @@ body {
   margin: 0 !important;
 }
 
+.wave {
+  position: fixed;
+  bottom: 0;
+}
+
 .App {
-  height: 100vh;
+  height: 150vh;
   position: relative;
 }
 
