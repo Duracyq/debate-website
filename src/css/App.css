@@ -185,7 +185,7 @@ body {
 }
 
 /* Media query for screens with a width of around 400px */
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 600px) {
 
   .App{
     min-height: calc(50vh + 2vmin);
