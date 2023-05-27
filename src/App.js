@@ -35,7 +35,7 @@ function App({ lorem, testTxt }) {
           const fullHeight = document.documentElement.scrollHeight;
           const scrollPercentage = (scrollPosition / (fullHeight - windowHeight)) * 100;
 
-          if (scrollPercentage >= 95) {
+          if (scrollPercentage >= 83) {
             setIsScrollDone(true);
           } else {
             setIsScrollDone(false);
@@ -75,7 +75,6 @@ function App({ lorem, testTxt }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const clicked = () => console.log('clicked');
 
   // frontend
   return (
@@ -95,7 +94,7 @@ function App({ lorem, testTxt }) {
 
 
         {waveVisible && (
-          <div className={`wave-container ${isScrollDone ? 'slide-up' : ''}`}>
+          <div className={`wave-container ${prevScrollPos > 0 ? 'slide-up' : ''}`}>
             <div className='vote'>
               <h2>Zagłosuj na mnie!</h2>
               <g>Marysia Ancerowicz</g>

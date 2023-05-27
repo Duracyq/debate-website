@@ -16,6 +16,7 @@ body {
 
 .wave-container {
   transition: transform 0.5s ease-in-out;
+  animation: wave-swim 0.5s ease-in-out forwards;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -64,6 +65,7 @@ body {
 }
 
 .header {
+  outline: #616163 solid;
   position: relative;
   z-index: 1;
 }
@@ -77,6 +79,7 @@ body {
   font-size: calc(50px + 2vmin);
   padding-top: 25px;
   padding-bottom: 25px;
+  margin-top: 0;
 }
 
 #herb {
@@ -96,18 +99,17 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #dcbbb3;
+  background-color: #eddad0;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   z-index: 2;
-
 }
 
 .scroll-button span {
   font-size: 24px;
-  color: #fff;
+  color: #616163
 }
 
 .menuButton {
@@ -133,14 +135,32 @@ body {
   transform: translateY(-100%);
 }
 
-@keyframes wave-appear {
+@keyframes wave-swim-reverse {
   0% {
     opacity: 0;
-    transform: translateY(100%);
+    transform: translateY(-100%);
   }
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+.wave-container.reverse {
+  opacity: 0;
+  transform: translateY(-100%);
+  animation: wave-swim-reverse 0.5s ease-in-out forwards;
+}
+
+
+@keyframes wave-swim {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-100%);
   }
 }
 
@@ -150,7 +170,7 @@ body {
   right: 50px;
   font-size: calc(20px + 2vmin);
   z-index: 1;
-  animation: h2-appear 0.5s ease-in-out forwards;
+  animation: h2-appear 0.7s ease-in-out forwards;
 }
 
 @keyframes h2-appear{
@@ -224,7 +244,7 @@ body {
     top: auto;
     max-width: 20%;
     margin: 0 auto; */
-    padding-top: 50px;
+    padding-top: 30px;
   }
 
   .vote{
