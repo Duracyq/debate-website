@@ -161,6 +161,7 @@ body {
   }
   .background-container {
     flex-direction: column;
+    overflow: hidden;
   }
 
   .prev-btn,

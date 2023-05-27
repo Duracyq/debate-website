@@ -9,26 +9,22 @@ const Postulaty = ({ lorem }) => {
   const setID = (id) => {
     setSelectedID(id);
   };
-  
-  const handleSwipe = (e) => {
-    const container = containerRef.current;
-    const deltaX = e.deltaX;
 
+  const handleSwipe = (deltaX) => {
     if (deltaX > 0) {
       // Swipe right, show previous item
-      const prevItem = container.previousElementSibling;
+      const prevItem = containerRef.current.previousElementSibling;
       if (prevItem) {
         setSelectedID(prevItem.dataset.id);
       }
     } else if (deltaX < 0) {
       // Swipe left, show next item
-      const nextItem = container.nextElementSibling;
+      const nextItem = containerRef.current.nextElementSibling;
       if (nextItem) {
         setSelectedID(nextItem.dataset.id);
       }
     }
   };
-
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -58,6 +54,21 @@ const Postulaty = ({ lorem }) => {
     setSelectedID(lorem[activeIndex].id);
   }, [activeIndex, lorem]);
 
+  const handleTouchStart = (e) => {
+    const touch = e.touches[0];
+    containerRef.current.startX = touch.clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    const touch = e.touches[0];
+    const deltaX = touch.clientX - containerRef.current.startX;
+    containerRef.current.deltaX = deltaX;
+  };
+
+  const handleTouchEnd = () => {
+    handleSwipe(containerRef.current.deltaX);
+  };
+
   return (
     <div className="App">
       <div className="holder-container">
@@ -79,24 +90,15 @@ const Postulaty = ({ lorem }) => {
 
         <div className="container">
           {/* placeholder */}
-          <div className="background-container" ref={containerRef} 
-              onTouchStart={(e) => {
-                const touch = e.touches[0];
-                containerRef.current.startX = touch.clientX;
-              }}
-              onTouchMove={(e) => {
-                const touch = e.touches[0];
-                const deltaX = touch.clientX - containerRef.current.startX;
-                containerRef.current.deltaX = deltaX;
-              }}
-              onTouchEnd={() => {
-                handleSwipe({ deltaX: containerRef.current.deltaX });
-              }}
+          <div
+            className="background-container"
+            ref={containerRef}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
           >
             <button className="prev-btn" onClick={handlePrev}>
-                <span class="material-symbols-outlined">
-                    arrow_back_ios_new
-                </span>
+              <span class="material-symbols-outlined">arrow_back_ios_new</span>
             </button>
             {lorem.map((item, index) => (
               <div
@@ -109,9 +111,7 @@ const Postulaty = ({ lorem }) => {
               </div>
             ))}
             <button className="next-btn" onClick={handleNext}>
-                <span class="material-symbols-outlined">
-                    arrow_forward_ios
-                </span>
+              <span class="material-symbols-outlined">arrow_forward_ios</span>
             </button>
           </div>
           {/* placeholder */}
