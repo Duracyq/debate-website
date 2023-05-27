@@ -15,7 +15,7 @@ const Postulaty = ({ lorem }) => {
       setActiveIndex((prevIndex) =>
         prevIndex === lorem.length - 1 ? 0 : prevIndex + 1
       );
-    }, 25000);
+    }, 20000);
 
     return () => {
       clearInterval(timer);
