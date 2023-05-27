@@ -10,22 +10,6 @@ const Postulaty = ({ lorem }) => {
     setSelectedID(id);
   };
 
-  const handleSwipe = (deltaX) => {
-    if (deltaX > 0) {
-      // Swipe right, show previous item
-      const prevItem = containerRef.current.previousElementSibling;
-      if (prevItem) {
-        setSelectedID(prevItem.dataset.id);
-      }
-    } else if (deltaX < 0) {
-      // Swipe left, show next item
-      const nextItem = containerRef.current.nextElementSibling;
-      if (nextItem) {
-        setSelectedID(nextItem.dataset.id);
-      }
-    }
-  };
-
   useEffect(() => {
     const timer = setInterval(() => {
       setActiveIndex((prevIndex) =>
@@ -54,21 +38,6 @@ const Postulaty = ({ lorem }) => {
     setSelectedID(lorem[activeIndex].id);
   }, [activeIndex, lorem]);
 
-  const handleTouchStart = (e) => {
-    const touch = e.touches[0];
-    containerRef.current.startX = touch.clientX;
-  };
-
-  const handleTouchMove = (e) => {
-    const touch = e.touches[0];
-    const deltaX = touch.clientX - containerRef.current.startX;
-    containerRef.current.deltaX = deltaX;
-  };
-
-  const handleTouchEnd = () => {
-    handleSwipe(containerRef.current.deltaX);
-  };
-
   return (
     <div className="App">
       <div className="holder-container">
@@ -90,16 +59,7 @@ const Postulaty = ({ lorem }) => {
 
         <div className="container">
           {/* placeholder */}
-          <div
-            className="background-container"
-            ref={containerRef}
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
-          >
-            <button className="prev-btn" onClick={handlePrev}>
-              <span class="material-symbols-outlined">arrow_back_ios_new</span>
-            </button>
+          <div className="background-container" ref={containerRef}>
             {lorem.map((item, index) => (
               <div
                 className={`statement ${
@@ -110,9 +70,14 @@ const Postulaty = ({ lorem }) => {
                 {item.text}
               </div>
             ))}
-            <button className="next-btn" onClick={handleNext}>
-              <span class="material-symbols-outlined">arrow_forward_ios</span>
-            </button>
+            <div className="button-container">
+              <button className="prev-btn" onClick={handlePrev}>
+                <span class="material-symbols-outlined">arrow_back_ios_new</span>
+              </button>
+              <button className="next-btn" onClick={handleNext}>
+                <span class="material-symbols-outlined">arrow_forward_ios</span>
+              </button>
+            </div>
           </div>
           {/* placeholder */}
         </div>

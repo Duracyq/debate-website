@@ -45,6 +45,8 @@ body {
 
 .statement.hidden {
   display: none;
+  /* or */
+  background-color: transparent;
 }
 
 .container {
@@ -54,19 +56,28 @@ body {
   margin-top: 1% !important;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .statement {
   text-align: justify;
   margin: 20px 20px 40px 20px;
   padding: 20px;
   border-radius: 15px;
   background-color: #dcbbb3;
+  animation: fadeIn 0.9s ease;
 }
-
 
 .statement.inactive {
-  background-color: null;
+  opacity: 0;
+  pointer-events: none;
 }
-
 .header {
   position: relative;
   z-index: 1;
@@ -101,11 +112,6 @@ body {
   justify-content: center;
 }
 
-.statement.hidden {
-  display: none;
-  /* or */
-  background-color: transparent;
-}
 .background-container {
   display: flex;
   align-items: center;
@@ -131,34 +137,34 @@ body {
   background-color: #99827c;
 }
 
-
-
 /* Media query for screens with a width of around 400px */
 @media screen and (max-width: 420px) {
   .statement {
     text-align: justify;
     margin: 5px 5px 10px 5px;
-    margin-bottom:20px;
+    margin-bottom: 20px;
     padding: 20px;
     border-radius: 15px;
     background-color: #dcbbb3;
   }
+
   .header h1 {
     margin-top: 0;
   }
+
   #herb {
     position: static;
     right: auto;
     top: auto;
     max-width: 20%;
     margin: 0 auto;
-    /* padding-top: 50px; */
   }
 
   .container {
     margin: 0 !important;
     padding-bottom: 630px;
   }
+
   .background-container {
     flex-direction: column;
     overflow: hidden;
@@ -168,7 +174,6 @@ body {
   .next-btn {
     display: none;
   }
-}
 
   .nav ul li {
     display: flex;
@@ -176,10 +181,31 @@ body {
     padding: 10px;
     margin: 5px;
   }
+
   .nav ul li .material-icons {
     margin-right: 5px;
   }
 
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
 
-  
+  .prev-btn,
+  .next-btn {
+    background-color: #dcbbb3;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    display: inline-block;
+  }
 
+  .prev-btn:hover,
+  .next-btn:hover {
+    background-color: #99827c;
+  }
+}
