@@ -49,7 +49,7 @@ function App({ lorem, about_me, title }) {
 
           setIsScrollDone(
             (windowWidth > 600 && windowWidth < 1000) ||
-            (scrollPercentage >= 70 && (windowWidth <= 600 || windowWidth >= 1000))
+            (scrollPercentage >= 85 && (windowWidth <= 600 || windowWidth >= 1000))
           )
 
           setPrevScrollPos(scrollPosition);
