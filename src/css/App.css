@@ -25,7 +25,7 @@ body {
 }
 
 .header {
-  outline: #616163 solid;
+  outline: #616163 dotted;
   position: relative;
   z-index: 1;
 }
