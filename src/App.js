@@ -16,7 +16,8 @@ function App({ lorem, about_me, title }) {
     { id: '6', text: lorem['6'] },
     { id: '7', text: lorem['7'] },
     { id: '8', text: lorem['8'] },
-    { id: '9', text: lorem['9'] }
+    { id: '9', text: lorem['9'] },
+    { id: '10', text: lorem['10'] }
   ]);
 
   const [loremTitle] = useState([
@@ -28,7 +29,8 @@ function App({ lorem, about_me, title }) {
     { id: '6', text: title['6'] },
     { id: '7', text: title['7'] },
     { id: '8', text: title['8'] },
-    { id: '9', text: title['9'] }
+    { id: '9', text: title['9'] },
+    { id: '10', text: title['10'] }
   ])
 
   const [showScrollButton, setShowScrollButton] = useState(false);
