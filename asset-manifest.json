@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/debate-website/static/css/main.d6c27ea2.css",
-    "main.js": "/debate-website/static/js/main.bffedee3.js",
+    "main.js": "/debate-website/static/js/main.47a55ccd.js",
     "static/media/marsyia2.jpg": "/debate-website/static/media/marsyia2.2ce5054089ebd3dbad36.jpg",
     "static/media/asdasd.png": "/debate-website/static/media/asdasd.542d9f67fb73bf00defa.png",
     "index.html": "/debate-website/index.html",
     "main.d6c27ea2.css.map": "/debate-website/static/css/main.d6c27ea2.css.map",
-    "main.bffedee3.js.map": "/debate-website/static/js/main.bffedee3.js.map"
+    "main.47a55ccd.js.map": "/debate-website/static/js/main.47a55ccd.js.map"
   },
   "entrypoints": [
     "static/css/main.d6c27ea2.css",
-    "static/js/main.bffedee3.js"
+    "static/js/main.47a55ccd.js"
   ]
 }
