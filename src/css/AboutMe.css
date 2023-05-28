@@ -3,9 +3,10 @@
     flex-direction: row;
   }
   
-  #aboutme .statement {
+.statement #aboutme  {
     width: auto !important;
     height: auto !important;
+    font-size: 20px;
   }
   
   #photo {
@@ -14,7 +15,7 @@
     border-radius: 20px;
   }
   
-  @media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
     .container_aboutme {
       flex-direction: column;
       margin: 10px;

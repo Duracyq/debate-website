@@ -24,46 +24,6 @@ body {
   z-index: 1;
 }
 
-
-.nav {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-}
-
-.nav ul {
-  display: flex;
-  list-style: none;
-  padding: 0;
-}
-
-.nav ul li {
-  padding: 10px;
-  margin: 10px;
-  background-color: #dcbbb3;
-  border-radius: 10px;
-}
-
-.nav ul li:hover {
-  background-color: #99827c;
-  cursor: pointer;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  margin: 10%;
-  margin-top: 1% !important;
-}
-
-.statement {
-  text-align: justify;
-  margin: 20px 20px 40px 20px;
-  padding: 20px;
-  border-radius: 15px;
-  background-color: #dcbbb3;
-}
-
 .header {
   outline: #616163 solid;
   position: relative;
@@ -83,13 +43,19 @@ body {
 }
 
 #herb {
-  margin-top: auto;
+  margin-top: 5px;
   display: flex;
   position: absolute;
   right: 4%;
   top: 2%;
   max-width: 8%;
-  width: auto;
+}
+
+@media screen and (min-width: 1000px) {
+  #herb {
+    transform: scale(0.5);
+    translate: 0 -40px; 
+  }
 }
 
 .scroll-button {
@@ -105,11 +71,21 @@ body {
   justify-content: center;
   cursor: pointer;
   z-index: 2;
+  animation: fadeIn 0.3s ease-in-out forwards;
 }
 
 .scroll-button span {
   font-size: 24px;
   color: #616163
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .menuButton {
@@ -193,19 +169,6 @@ body {
   .app-wrapper {
     height: 20vh;
   }
-  .container {
-    margin: 0;
-  }
-
-  .nav ul li {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    margin: 5px;
-  }
-  .nav ul li .material-icons {
-    margin-right: 5px;
-  }
 
   .header {
     position: relative;
@@ -227,24 +190,24 @@ body {
   }
   .header h1 {
     padding-top: 0 !important;
-    margin-bottom: 100px;
+    margin-bottom: 150px;
   }
   
   #herb {
-    margin-top: auto;
+    margin-top: 5px;
     display: flex;
     position: absolute;
     right: 4%;
     top: 2%;
-    max-width: 8%;
-    width: auto;
+    /* max-width: 8%; */
+    transform: scale(0.8);
     background-color: inherit; /* Inherit the background color from the parent (.header) */
     /* position: static;
     right: auto;
     top: auto;
     max-width: 20%;
     margin: 0 auto; */
-    padding-top: 30px;
+    /* padding-top: 30px; */
   }
 
   .vote{

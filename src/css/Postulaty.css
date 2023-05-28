@@ -65,6 +65,11 @@ body {
   }
 }
 
+.title_statement {
+  font-size: 28px;
+  text-align: left !important;
+}
+
 .statement {
   text-align: justify;
   margin: 20px 20px 40px 20px;
@@ -95,7 +100,7 @@ body {
 }
 
 #herb {
-  margin-top: auto;
+  margin-top: 5px;
   display: flex;
   position: absolute;
   right: 4%;
@@ -162,7 +167,7 @@ body {
 
   .container {
     margin: 0 !important;
-    padding-bottom: 630px;
+    padding-bottom: 20vh;
   }
 
   .background-container {
