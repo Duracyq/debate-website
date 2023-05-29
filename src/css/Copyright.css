@@ -1,0 +1,18 @@
+.copyright {
+    font-size: 10px;
+    position: fixed;
+    justify-content: right;
+    bottom: 10px;
+    margin: 0;
+    right: 10px;
+}
+
+.copyright span {
+    transform: scale(0.5);
+}
+
+@media (max-width: 680px) {
+    .copyright {
+        left: 10px;
+    }
+}

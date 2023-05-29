@@ -1,6 +1,7 @@
 import './css/App.css';
 import AboutMe from './AboutMe';
 import Postulaty from './Postulaty';
+import Copyright from './Copyright';
 import React, { useState, useEffect, useRef } from 'react';
 import Wave from 'react-wavify';
 import herb from './img/asdasd.png';
@@ -96,7 +97,7 @@ function App({ lorem, about_me, title }) {
 
   // frontend
   return (
-  <div className="App">
+  <div className="App" class='notranslate'>
     <div className='background-image'>  
       <div className="app-wrapper" ref={appRef}>
         {/* version 1 */}
@@ -123,6 +124,7 @@ function App({ lorem, about_me, title }) {
                 <g>Marysia Ancerowicz</g>
               </div>
               <div className="wave-animation">
+                <Copyright className="copyright" />
                 <Wave
                   fill="#e8bdc3"
                   paused={false}
@@ -132,7 +134,7 @@ function App({ lorem, about_me, title }) {
                     speed: 0.15,
                     points: 3,
                   }}
-                />
+                  />
               </div>
             </div>
           )}
