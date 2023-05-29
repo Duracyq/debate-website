@@ -1,14 +1,40 @@
 .container_aboutme {
     display: flex;
     flex-direction: row;
-}
-#aboutme .statement {
+  }
+  
+.statement #aboutme  {
     width: auto !important;
     height: auto !important;
-}
-#photo {
+    font-size: 20px;
+  }
+  
+  #photo {
     margin-left: 20px;
     height: 300px;
     border-radius: 20px;
-}
+  }
+  
+@media screen and (max-width: 600px) {
+    .container_aboutme {
+      flex-direction: column;
+      margin: 10px;
+    }
+  
+    #photo {
+      position: fixed !important;
+      width: 210px; /* Scale the width to 90% of the viewport width */
+      top: 200px;
+      transform: translateX(-20%);
+      z-index: -1; /* Center the photo horizontally */
+    }
+  
+    #aboutme .statement {
+      opacity: 0;
+      visibility: hidden;
+      animation-name: fadeIn;
+      animation-duration: 1s;
+      animation-fill-mode: forwards; /* Keep the statement visible after animation */
+    }
+  }
   
